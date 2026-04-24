@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# C++ binaries
+*.exe
+*.o
+*.out
+*.obj

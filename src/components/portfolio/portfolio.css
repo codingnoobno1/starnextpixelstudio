@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@400;700&display=swap');
+
+:root {
+  --nsp-red: #ff003c;
+  --nsp-red-rgb: 255, 0, 60;
+  --nsp-black: #0a0a0a;
+  --nsp-dark-gray: #1a1a1a;
+  --nsp-gray: #888888;
+  --nsp-white: #ffffff;
+  --nsp-glass: rgba(255, 255, 255, 0.03);
+  --nsp-glass-border: rgba(255, 255, 255, 0.1);
+  --nsp-glow: 0 0 20px rgba(255, 0, 60, 0.3);
+  --nsp-transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --font-heading: 'Outfit', sans-serif;
+  --font-body: 'Inter', sans-serif;
+}
+
+.nsp-portfolio {
+  background-color: var(--nsp-black);
+  color: var(--nsp-white);
+  font-family: var(--font-body);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.nsp-heading {
+  font-family: var(--font-heading);
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+}
+
+/* Glassmorphism */
+.nsp-glass {
+  background: var(--nsp-glass);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--nsp-glass-border);
+  border-radius: 12px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes nspGlow {
+  0% { box-shadow: 0 0 5px rgba(255, 0, 60, 0.2); }
+  50% { box-shadow: 0 0 20px rgba(255, 0, 60, 0.5); }
+  100% { box-shadow: 0 0 5px rgba(255, 0, 60, 0.2); }
+}
+
+.nsp-glow-hover:hover {
+  animation: nspGlow 2s infinite;
+  border-color: var(--nsp-red);
+}
+
+/* Text Glow */
+.text-glow {
+  text-shadow: 0 0 10px rgba(255, 0, 60, 0.8);
+}
+
+/* Red Gradient Text */
+.text-gradient {
+  background: linear-gradient(90deg, #ff003c, #ff4d6d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--nsp-black);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--nsp-dark-gray);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--nsp-red);
+}
